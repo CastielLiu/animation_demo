@@ -21,7 +21,7 @@ CarouselImageWindow::CarouselImageWindow(QWidget *parent)
     m_buttonBackWidget->setStyleSheet(".QWidget{background:transparent;}");
 
     if(parent != nullptr)
-        this->setGeometry(parent->geometry());//覆盖父类控件
+        this->setGeometry(parent->rect());//覆盖父类控件,不能使用geometry, 因为 geometry顶点值可能不为0 
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
     this->setAttribute(Qt::WA_TranslucentBackground);
 
